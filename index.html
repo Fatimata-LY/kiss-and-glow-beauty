@@ -1,46 +1,387 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiss & Glow Beauty — Boutique</title>
-<meta name="description" content="Kiss & Glow Beauty — Gloss, beauté et accessoires à Dakar.">
-<style>
-:root{--rose:#c72f59;--rose2:#f8c9d6;--pale:#fff5f8;--ink:#24171c;--muted:#75666c;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff9fb;color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{text-decoration:none;color:inherit}
-header{position:sticky;top:0;z-index:50;background:rgba(255,249,251,.96);backdrop-filter:blur(12px);border-bottom:1px solid #f0dce3}.nav{max-width:1200px;margin:auto;padding:10px 22px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px}.logo img{width:240px;height:96px;object-fit:contain;display:block;margin:auto}.links{display:flex;gap:28px;font-size:14px;font-weight:700}.links a:hover{color:var(--rose)}.actions{justify-self:end;display:flex;gap:9px}.pill{border:0;border-radius:999px;padding:11px 16px;font-weight:800;cursor:pointer}.cartbtn{background:#fff0f4;color:var(--rose)}
-.hero{background:linear-gradient(105deg,#fff0f4 0%,#ffdbe5 55%,#f8b8c9 100%);min-height:400px}.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:400px;padding:35px 22px}.hero h1{font-family:Georgia,serif;font-size:clamp(44px,6vw,76px);line-height:.95;margin:0 0 18px;color:var(--rose)}.hero h1 small{display:block;font:italic 25px Georgia,serif;color:#a62b4d;margin-bottom:8px}.hero p{font-size:18px;color:#633f4b;line-height:1.55;max-width:540px}.facts{display:flex;gap:22px;flex-wrap:wrap;margin-top:25px;color:var(--rose);font-weight:800}.hero-photo{height:330px;border-radius:28px;overflow:hidden;box-shadow:0 20px 50px #a82d4a22;background:white}.hero-photo img{width:100%;height:100%;object-fit:cover}
-.section{max-width:1200px;margin:auto;padding:55px 22px}.section-title{text-align:center;margin-bottom:25px}.section-title h2{font:italic 42px Georgia,serif;color:var(--rose);margin:0 0 8px}.section-title p{color:var(--muted)}.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:20px 0 28px}.filter{border:1px solid #edc2d0;background:#fff;padding:9px 15px;border-radius:999px;font-weight:800;cursor:pointer}.filter.active{background:var(--rose);color:#fff}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border:1px solid #f1dfe5;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px #a82d4a0d}.card img{width:100%;height:250px;object-fit:cover;background:#f5e6eb}.body{padding:15px}.tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--rose);font-weight:800}.card h3{font:italic 22px Georgia,serif;margin:7px 0}.desc{font-size:13px;color:var(--muted);min-height:38px}.price{font-size:19px;font-weight:900;color:var(--rose);margin:11px 0}.buy{width:100%;background:var(--rose);color:#fff;border:0;border-radius:999px;padding:11px;cursor:pointer;font-weight:900}.swatches-card{background:#fff;border:1px solid #f1dfe5;border-radius:24px;overflow:hidden;box-shadow:0 15px 40px #a82d4a12}.swatches-card img{display:block;width:72%;max-width:720px;height:auto;margin:0 auto}.about{background:#fff0f5;border-radius:28px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:28px}.about h2{font:italic 38px Georgia,serif;color:var(--rose)}.points{display:grid;grid-template-columns:1fr 1fr;gap:12px}.point{background:#fff;padding:18px;border-radius:18px}.point b{display:block;margin:5px 0}.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.contact-box{background:#fff;border:1px solid #f0dce3;border-radius:20px;padding:22px;text-align:center}.contact-box h3{color:var(--rose)}.social{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.social a{background:#fff;border:1px solid #efcbd7;border-radius:999px;padding:10px 14px;color:var(--rose);font-weight:800}
-footer{background:#c52f57;color:#fff;padding:25px 20px;text-align:center;margin-top:30px}.footer-logo img{width:150px;height:70px;object-fit:contain;filter:brightness(0) invert(1);opacity:.95}.cart{position:fixed;right:18px;bottom:18px;width:min(410px,calc(100vw - 36px));background:#fff;border:1px solid #efd8e1;border-radius:24px;box-shadow:0 25px 70px #0002;z-index:100;display:none;overflow:hidden}.cart.open{display:block}.cart-head{padding:16px;background:#fff0f5;display:flex;justify-content:space-between;font-weight:900}.close{border:0;background:#fff;border-radius:50%;width:32px;height:32px;cursor:pointer}.cart-list{max-height:250px;overflow:auto;padding:10px 15px}.item{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #f1e4e8}.qty{display:flex;align-items:center;gap:6px}.qty button{width:28px;height:28px;border:1px solid #efd8e1;background:#fff;border-radius:8px;cursor:pointer}.cart-foot{padding:15px}.total{display:flex;justify-content:space-between;font-weight:900;font-size:19px;margin-bottom:12px}.form{display:grid;gap:8px}.form input,.form textarea{padding:11px;border:1px solid #ead5dd;border-radius:12px;font:inherit}.empty{text-align:center;color:var(--muted);padding:25px}.note{font-size:12px;color:var(--muted);margin-top:9px}
-@media(max-width:850px){.nav{grid-template-columns:auto 1fr auto}.links{display:none}.hero-inner,.about{grid-template-columns:1fr}.hero-photo{height:300px}.grid{grid-template-columns:repeat(2,1fr)}.contact{grid-template-columns:1fr}.logo img{width:190px;height:78px}}@media(max-width:520px){.nav{padding:8px 12px}.logo img{width:175px;height:72px}.grid{gap:10px}.card img{height:205px}.swatches-card img{width:100%}.body{padding:11px}.card h3{font-size:19px}.hero-inner{padding:30px 16px}.hero h1{font-size:50px}.section{padding:42px 16px}}
-</style></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiss & Glow Beauty — Boutique</title>
+  <meta name="description" content="Kiss & Glow Beauty — Gloss, beauté et accessoires à Dakar.">
+
+  <!-- Polices élégantes (Google Fonts). Sans connexion, le site utilise Georgia et Arial automatiquement. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Le design est dans style.css -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Prévient le CSS que le JavaScript fonctionne (nécessaire pour les animations d'apparition) -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
 <body>
-<header><div class="nav"><div class="links"><a href="#boutique">Boutique</a><a href="#apropos">À propos</a><a href="#contact">Contact</a></div><a class="logo" href="#"><img src="images/logo.jpg" alt="Kiss & Glow Beauty — By Imrane"></a><div class="actions"><button class="pill cartbtn" onclick="toggleCart()">🛍️ Panier <span id="count">0</span></button></div></div></header>
-<main>
-<section class="hero"><div class="hero-inner"><div><h1><small>Plus qu’un gloss…</small>ton glow.</h1><p>Une touche de confiance avec les vrais glosses Kiss & Glow. Choisis ta teinte et commande facilement à Dakar.</p><div class="facts"><span>💖 Commande rapide : 77 302 22 64</span><span>💳 Wave uniquement</span><span>🚚 Livraison partout à Dakar</span></div></div><div class="hero-photo"><img src="images/collection.jpeg" alt="Glosses Kiss & Glow"></div></div></section>
-<section class="section swatches-section" id="couleurs"><div class="section-title"><h2>Nos 4 couleurs</h2><p>Découvre les teintes et les goûts de nos glosses.</p></div><div class="swatches-card"><img src="images/4-couleurs-gloss.jpg" alt="Les 4 couleurs des gloss Kiss & Glow"></div></section><section class="section" id="boutique"><div class="section-title"><h2>Nos Glosses</h2><p>Les vrais produits et les vraies photos envoyées.</p></div><div class="filters"><button class="filter active" onclick="filterProducts('all',this)">Tous</button><button class="filter" onclick="filterProducts('2500',this)">2 500 FCFA</button><button class="filter" onclick="filterProducts('1500',this)">1 500 FCFA</button></div><div class="grid" id="products"></div></section>
-<section class="section" id="apropos"><div class="about"><div><h2>Kiss & Glow Beauty</h2><p>Une boutique féminine dédiée à la beauté et au glow. Cette collection présente nos glosses en deux formats : gamme premium à 2 500 FCFA et petit modèle (PM) à 1 500 FCFA.</p></div><div class="points"><div class="point">💋<b>4 goûts</b>Fraise, chewing-gum, chocolat vanille et pastèque.</div><div class="point">✨<b>Petit modèle (PM)</b>Les mêmes noms en format PM.</div><div class="point">📦<b>Commande facile</b>Panier + commande WhatsApp.</div><div class="point">📱<b>100% responsive</b>Pour téléphone et ordinateur.</div></div></div></section>
-<section class="section" id="contact"><div class="section-title"><h2>Contact & Commande</h2><p>Tout est prêt pour recevoir les commandes.</p></div><div class="contact"><div class="contact-box"><h3>💬 Commande sur WhatsApp</h3><a href="https://wa.me/221773022264" target="_blank"><b>📲 77 302 22 64</b></a><p>✨ Écris-nous pour commander</p></div><div class="contact-box"><h3>💳 Paiement</h3><b>Wave uniquement</b><p>77 302 22 64</p></div><div class="contact-box"><h3>🚚 Livraison</h3><b>Livraison partout à Dakar</b><p>Frais de livraison à confirmer avec la boutique.</p></div></div><div class="section-title" style="margin-top:35px"><h2 style="font-size:30px">Suivez-nous</h2><div class="social"><a href="https://www.instagram.com/kissglow_beauty2?stkn=NzV6cmpxb3Bzcmg0" target="_blank">Instagram @kissglow_beauty2</a><a href="https://www.tiktok.com/@kissglow_beauty?_r=1&_t=ZN-9AMlq56L0AI" target="_blank">TikTok @kissglow_beauty</a><a href="https://snapchat.com/t/g01RsVV7" target="_blank">Snapchat</a></div></div></section>
-</main>
-<footer><div class="footer-logo"><img src="images/logo.jpg" alt="Kiss & Glow"></div><div>© 2026 Kiss & Glow Beauty — By Imrane</div></footer>
-<div class="cart" id="cart"><div class="cart-head"><span>🛍️ Ton panier</span><button class="close" onclick="toggleCart()">✕</button></div><div class="cart-list" id="cartList"></div><div class="cart-foot"><div class="total"><span>Total</span><span id="total">0 FCFA</span></div><div class="form"><input id="customerName" placeholder="Ton nom"><input id="customerPhone" placeholder="Ton numéro de téléphone"><textarea id="customerAddress" rows="2" placeholder="Adresse / quartier de livraison"></textarea><button class="buy" onclick="sendOrder()">Commander sur WhatsApp</button></div><div class="note">🚚 Livraison partout à Dakar • 💳 Wave uniquement • 📲 Commande : 77 302 22 64</div></div></div>
-<script>
-const products=[
-{id:'cherry2500',name:'Cherry Glow',price:2500,range:'Gamme Premium',img:'cherry-flow-2500.jpeg',desc:'🍓 Goût : Fraise — gloss rouge intense et brillant.'},
-{id:'berry2500',name:'Berry Glow',price:2500,range:'Gamme Premium',img:'berry-glow-2500.jpeg',desc:'🍬 Goût : Chewing-gum — gloss rose doux et lumineux.'},
-{id:'caramel2500',name:'Caramel Kiss',price:2500,range:'Gamme Premium',img:'caramel-kiss-2500.jpeg',desc:'🍫 Goût : Chocolat vanille — gloss marron caramel, chic et chaleureux.'},
-{id:'glassy2500',name:'Glassy Glow',price:2500,range:'Gamme Premium',img:'glassy-glow-2500.jpeg',desc:'🍉 Goût : Pastèque — gloss transparent et lumineux.'},
-{id:'cherry1500',name:'Cherry Glow PM',price:1500,range:'Petit modèle (PM)',img:'cherry-flow-1500.jpeg',desc:'🍓 Goût : Fraise — petit modèle (PM), teinte rouge.'},
-{id:'berry1500',name:'Berry Glow PM',price:1500,range:'Petit modèle (PM)',img:'berry-glow-1500.jpeg',desc:'🍬 Goût : Chewing-gum — petit modèle (PM), teinte rose.'},
-{id:'caramel1500',name:'Caramel Kiss PM',price:1500,range:'Petit modèle (PM)',img:'caramel-kiss-1500.jpeg',desc:'🍫 Goût : Chocolat vanille — petit modèle (PM), teinte marron.'},
-{id:'glassy1500',name:'Glassy Glow PM',price:1500,range:'Petit modèle (PM)',img:'glassy-glow-1500.jpeg',desc:'🍉 Goût : Pastèque — petit modèle (PM), teinte transparente.'}
-];let cart=[];
-const money=n=>new Intl.NumberFormat('fr-FR').format(n)+' FCFA';
-function renderProducts(f='all'){const e=document.getElementById('products');e.innerHTML=products.filter(p=>f==='all'||String(p.price)===f).map(p=>`<article class="card"><img src="images/${p.img}" alt="${p.name}"><div class="body"><div class="tag">${p.range}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="price">${money(p.price)}</div><button class="buy" onclick="addToCart('${p.id}')">Ajouter au panier</button></div></article>`).join('')}
-function filterProducts(f,b){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderProducts(f)}
-function addToCart(id){const p=products.find(x=>x.id===id),i=cart.find(x=>x.id===id);if(i)i.qty++;else cart.push({...p,qty:1});renderCart();document.getElementById('cart').classList.add('open')}
-function changeQty(id,d){const i=cart.find(x=>x.id===id);if(!i)return;i.qty+=d;if(i.qty<=0)cart=cart.filter(x=>x.id!==id);renderCart()}
-function renderCart(){document.getElementById('count').textContent=cart.reduce((s,x)=>s+x.qty,0);const l=document.getElementById('cartList');if(!cart.length){l.innerHTML='<div class="empty">Ton panier est vide.</div>';document.getElementById('total').textContent='0 FCFA';return}l.innerHTML=cart.map(x=>`<div class="item"><div><b>${x.name}</b><br><small>${money(x.price)}</small></div><div class="qty"><button onclick="changeQty('${x.id}',-1)">−</button><b>${x.qty}</b><button onclick="changeQty('${x.id}',1)">+</button></div></div>`).join('');document.getElementById('total').textContent=money(cart.reduce((s,x)=>s+x.price*x.qty,0))}
-function toggleCart(){document.getElementById('cart').classList.toggle('open')}
-function sendOrder(){if(!cart.length)return alert('Ajoute au moins un article au panier.');const n=document.getElementById('customerName').value.trim(),p=document.getElementById('customerPhone').value.trim(),a=document.getElementById('customerAddress').value.trim();if(!n||!p||!a)return alert('Remplis ton nom, ton téléphone et ton adresse.');const lines=cart.map(x=>`• ${x.name} x${x.qty} = ${money(x.price*x.qty)}`).join('\n');const total=money(cart.reduce((s,x)=>s+x.price*x.qty,0));const msg=`Bonjour Kiss & Glow !\n\nJe souhaite commander :\n${lines}\n\nTotal : ${total}\nNom : ${n}\nTéléphone : ${p}\nAdresse : ${a}`;window.open('https://wa.me/221773022264?text='+encodeURIComponent(msg),'_blank')}
-renderProducts();renderCart();
-</script></body></html>
+
+  <!-- =====================================================
+       BARRE DU HAUT : sur ordinateur, seul le bouton Panier (en haut à droite) ;
+       sur téléphone / tablette : menu + logo + panier
+       ===================================================== -->
+  <header class="topbar">
+    <button class="topbar__menu" id="menuToggle" type="button"
+            aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="sidebar">
+      <span></span><span></span>
+    </button>
+
+    <a class="topbar__logo" href="#accueil">
+      <img src="images/logo.jpg" alt="Kiss & Glow Beauty — By Imrane">
+    </a>
+
+    <button class="topbar__cart" type="button" data-action="toggle-cart" aria-label="Ouvrir le panier">
+      <span>Panier</span>
+      <span class="cart-count">0</span>
+    </button>
+  </header>
+
+
+  <!-- =====================================================
+       1. NAVIGATION : BARRE LATÉRALE
+       Sur ordinateur elle reste fixe à gauche.
+       Sur téléphone elle glisse depuis la gauche (bouton du menu).
+       ===================================================== -->
+  <aside class="sidebar" id="sidebar" aria-label="Menu principal">
+
+    <a class="sidebar__logo" href="#accueil">
+      <img src="images/logo.jpg" alt="Kiss & Glow Beauty — By Imrane">
+    </a>
+
+    <nav class="sidebar__nav" id="mainNav">
+      <a class="sidebar__link" href="#accueil">Accueil</a>
+      <a class="sidebar__link" href="#collections">Collections</a>
+      <a class="sidebar__link" href="#boutique">Boutique</a>
+      <a class="sidebar__link" href="#pourquoi">Pourquoi nous</a>
+      <a class="sidebar__link" href="#apropos">À propos</a>
+      <a class="sidebar__link" href="#contact">Contact</a>
+    </nav>
+
+    <div class="sidebar__foot">
+      <div class="sidebar__social">
+        <a href="https://www.instagram.com/kissglow_beauty2?stkn=NzV6cmpxb3Bzcmg0" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@kissglow_beauty?_r=1&_t=ZN-9AMlq56L0AI" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://www.snapchat.com/add/kiss_glow26" target="_blank" rel="noopener noreferrer">Snapchat</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Voile sombre derrière le menu ou le panier ouverts -->
+  <div class="scrim" id="scrim" data-action="close-overlays"></div>
+
+
+  <!-- Tout le contenu du site est placé à droite de la barre latérale -->
+  <div class="page">
+
+    <main>
+
+      <!-- =====================================================
+           2. ACCUEIL (HERO)
+           ===================================================== -->
+      <section class="hero" id="accueil">
+
+        <div class="hero__text">
+          <p class="hero__kicker">Plus qu’un gloss…</p>
+          <h1 class="hero__title">
+            <span class="hero__line"><span>ton</span></span>
+            <span class="hero__line hero__line--indent"><span>glow.</span></span>
+          </h1>
+          <p class="hero__lead">
+            Une touche de confiance avec les vrais glosses Kiss & Glow.
+            Choisis ta teinte et commande facilement à Dakar.
+          </p>
+
+          <div class="hero__actions">
+            <a class="button button--solid" href="#boutique">Découvrir la collection</a>
+            <a class="button button--link" href="https://wa.me/221773022264" target="_blank" rel="noopener noreferrer">Commande rapide : 77 302 22 64</a>
+          </div>
+
+          <ul class="hero__facts">
+            <li>Wave uniquement</li>
+            <li>Livraison partout à Dakar</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__frame">
+            <img class="hero__image" src="images/collection.jpeg" alt="Glosses Kiss & Glow">
+          </div>
+
+          <!-- Médaillon qui tourne lentement -->
+          <div class="hero__badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <path id="badgePath" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/>
+              </defs>
+              <text>
+                <textPath href="#badgePath" textLength="292" lengthAdjust="spacing">Kiss &amp; Glow Beauty — By Imrane —</textPath>
+              </text>
+            </svg>
+            <span class="hero__badge-mark">K&amp;G</span>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Bandeau défilant -->
+      <div class="marquee" aria-label="Goûts et informations">
+        <div class="marquee__track">
+          <span>Fraise</span><span>Chewing-gum</span><span>Chocolat vanille</span><span>Pastèque</span>
+          <span>Livraison partout à Dakar</span><span>Paiement Wave</span>
+          <span aria-hidden="true">Fraise</span><span aria-hidden="true">Chewing-gum</span><span aria-hidden="true">Chocolat vanille</span><span aria-hidden="true">Pastèque</span>
+          <span aria-hidden="true">Livraison partout à Dakar</span><span aria-hidden="true">Paiement Wave</span>
+        </div>
+      </div>
+
+
+      <!-- =====================================================
+           3. COLLECTIONS : les deux formats puis les 4 teintes
+           ===================================================== -->
+      <section class="collections" id="collections">
+
+        <div class="collections__intro reveal">
+          <h2 class="display-title">Nos collections</h2>
+          <p class="collections__lead">Deux formats, quatre teintes, quatre goûts. Choisis ton gloss, du grand modèle au petit modèle.</p>
+        </div>
+
+        <div class="collections__grid">
+
+          <a class="collection collection--gm reveal" href="#boutique" data-collection="2500">
+            <div class="collection__media">
+              <img src="images/cherry-flow-2500.jpeg" alt="Gloss Kiss & Glow format GM" loading="lazy">
+            </div>
+            <div class="collection__caption">
+              <div>
+                <h3 class="collection__name">Format GM</h3>
+                <p class="collection__text">Le grand modèle</p>
+              </div>
+              <p class="collection__price">2 500 FCFA</p>
+            </div>
+            <span class="collection__cta">Voir le format GM</span>
+          </a>
+
+          <a class="collection collection--pm reveal" href="#boutique" data-collection="1500">
+            <div class="collection__media">
+              <img src="images/berry-glow-1500.jpeg" alt="Gloss Kiss & Glow format PM" loading="lazy">
+            </div>
+            <div class="collection__caption">
+              <div>
+                <h3 class="collection__name">Format PM</h3>
+                <p class="collection__text">Le petit modèle</p>
+              </div>
+              <p class="collection__price">1 500 FCFA</p>
+            </div>
+            <span class="collection__cta">Voir le format PM</span>
+          </a>
+
+        </div>
+
+        <!-- Les 4 couleurs -->
+        <div class="shades reveal" id="couleurs">
+          <div class="shades__text">
+            <h3 class="shades__title">Nos 4 couleurs</h3>
+            <p class="shades__lead">Découvre les teintes et les goûts de nos glosses.</p>
+
+            <ul class="shades__list">
+              <li class="shade"><span class="shade__dot shade__dot--cherry"></span><strong>Cherry Glow</strong><em>Fraise</em></li>
+              <li class="shade"><span class="shade__dot shade__dot--glassy"></span><strong>Glassy Glow</strong><em>Pastèque</em></li>
+              <li class="shade"><span class="shade__dot shade__dot--berry"></span><strong>Berry Glow</strong><em>Chewing-gum</em></li>
+              <li class="shade"><span class="shade__dot shade__dot--caramel"></span><strong>Caramel Kiss</strong><em>Chocolat vanille</em></li>
+            </ul>
+          </div>
+
+          <div class="shades__media">
+            <img src="images/4-couleurs-gloss.jpg" alt="Les 4 couleurs des gloss Kiss & Glow" loading="lazy">
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           4. CATALOGUE (les cartes sont créées par script.js dans #products)
+           ===================================================== -->
+      <section class="catalog" id="boutique">
+
+        <div class="catalog__head reveal">
+          <div>
+            <h2 class="display-title">La boutique</h2>
+            <p class="catalog__count" id="resultCount"></p>
+          </div>
+
+          <!-- Filtres : data-filter = valeur utilisée par script.js -->
+          <div class="filters" role="group" aria-label="Filtrer les produits">
+            <button class="filter active" type="button" data-filter="all">Tous</button>
+            <button class="filter" type="button" data-filter="2500">2 500 FCFA</button>
+            <button class="filter" type="button" data-filter="1500">1 500 FCFA</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="products"></div>
+
+      </section>
+
+
+      <!-- =====================================================
+           5. POURQUOI CHOISIR KISS & GLOW ?
+           ===================================================== -->
+      <section class="why" id="pourquoi">
+        <div class="why__inner">
+
+          <h2 class="why__title reveal">Pourquoi choisir Kiss & Glow ?</h2>
+
+          <div class="why__list">
+            <div class="why__item reveal">
+              <h3 class="why__item-title">4 goûts gourmands</h3>
+              <p class="why__item-text">Fraise, chewing-gum, chocolat vanille et pastèque.</p>
+            </div>
+            <div class="why__item reveal">
+              <h3 class="why__item-title">Deux formats : GM et PM</h3>
+              <p class="why__item-text">Format GM ou format PM, avec les mêmes noms.</p>
+            </div>
+            <div class="why__item reveal">
+              <h3 class="why__item-title">Commande facile</h3>
+              <p class="why__item-text">Ton panier, puis ta commande envoyée directement sur WhatsApp.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- =====================================================
+           6. À PROPOS
+           ===================================================== -->
+      <section class="about" id="apropos">
+        <div class="about__media reveal">
+          <img src="images/glassy-glow-2500.jpeg" alt="Glassy Glow — Kiss & Glow Beauty" loading="lazy">
+        </div>
+
+        <div class="about__text reveal">
+          <h2 class="display-title">Kiss & Glow Beauty</h2>
+          <p>
+            Une boutique féminine dédiée à la beauté et au glow. Cette collection présente
+            nos glosses en deux formats : le GM à 2 500 FCFA et le PM à 1 500 FCFA.
+          </p>
+          <p class="about__signature">By Imrane</p>
+        </div>
+      </section>
+
+
+      <!-- =====================================================
+           7. RÉSEAUX SOCIAUX
+           ===================================================== -->
+      <section class="social" id="reseaux">
+        <h2 class="social__title reveal">Suis-nous</h2>
+
+        <div class="social__list">
+          <a class="social-row reveal" href="https://www.instagram.com/kissglow_beauty2?stkn=NzV6cmpxb3Bzcmg0" target="_blank" rel="noopener noreferrer">
+            <span class="social-row__name">Instagram</span>
+            <span class="social-row__handle">@kissglow_beauty2</span>
+          </a>
+          <a class="social-row reveal" href="https://www.tiktok.com/@kissglow_beauty?_r=1&_t=ZN-9AMlq56L0AI" target="_blank" rel="noopener noreferrer">
+            <span class="social-row__name">TikTok</span>
+            <span class="social-row__handle">@kissglow_beauty</span>
+          </a>
+          <a class="social-row reveal" href="https://www.snapchat.com/add/kiss_glow26" target="_blank" rel="noopener noreferrer">
+            <span class="social-row__name">Snapchat</span>
+            <span class="social-row__handle">kiss_glow26</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         8. PIED DE PAGE
+         ===================================================== -->
+    <footer class="footer" id="contact">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="images/logo.jpg" alt="Kiss & Glow Beauty — By Imrane">
+          </div>
+          <p class="footer__tagline">Plus qu’un gloss… ton glow.</p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Commander</h3>
+          <a class="footer__link" href="https://wa.me/221773022264" target="_blank" rel="noopener noreferrer">WhatsApp : 77 302 22 64</a>
+          <p>Écris-nous pour commander.</p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Paiement</h3>
+          <p class="footer__strong">Wave uniquement</p>
+          <p>77 302 22 64</p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Livraison</h3>
+          <p class="footer__strong">Livraison partout à Dakar</p>
+          <p>Frais de livraison à confirmer avec la boutique.</p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__heading">Suis-nous</h3>
+          <a class="footer__link" href="https://www.instagram.com/kissglow_beauty2?stkn=NzV6cmpxb3Bzcmg0" target="_blank" rel="noopener noreferrer">Instagram @kissglow_beauty2</a>
+          <a class="footer__link" href="https://www.tiktok.com/@kissglow_beauty?_r=1&_t=ZN-9AMlq56L0AI" target="_blank" rel="noopener noreferrer">TikTok @kissglow_beauty</a>
+          <a class="footer__link" href="https://www.snapchat.com/add/kiss_glow26" target="_blank" rel="noopener noreferrer">Snapchat kiss_glow26</a>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Kiss & Glow Beauty — By Imrane</p>
+        <a href="#accueil">Retour en haut</a>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- =====================================================
+       PANIER : tiroir qui glisse depuis la droite
+       Les id ci-dessous sont utilisés par script.js : ne pas les renommer
+       ===================================================== -->
+  <aside class="cart" id="cart" aria-label="Panier">
+
+    <div class="cart__head">
+      <h2 class="cart__title">Ton panier</h2>
+      <button class="cart__close" type="button" data-action="toggle-cart" aria-label="Fermer le panier">✕</button>
+    </div>
+
+    <!-- Articles (remplis par script.js) -->
+    <div class="cart__list" id="cartList"></div>
+
+    <div class="cart__foot">
+      <div class="cart__total">
+        <span>Total</span>
+        <span id="total">0 FCFA</span>
+      </div>
+
+      <div class="cart__form">
+        <input id="customerName" type="text" placeholder="Ton nom">
+        <input id="customerPhone" type="tel" placeholder="Ton numéro de téléphone">
+        <textarea id="customerAddress" rows="2" placeholder="Adresse / quartier de livraison"></textarea>
+        <button class="button button--solid button--full" type="button" data-action="send-order">
+          Commander sur WhatsApp
+        </button>
+      </div>
+
+      <p class="cart__note">Livraison partout à Dakar • Wave uniquement • Commande : 77 302 22 64</p>
+    </div>
+  </aside>
+
+
+  <!-- Les fonctionnalités (panier, filtres, WhatsApp, animations) sont dans script.js -->
+  <script src="script.js"></script>
+</body>
+</html>
